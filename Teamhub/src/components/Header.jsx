@@ -1,0 +1,4 @@
+﻿import { AppBar, Button, Toolbar, Typography } from '@mui/material'
+import { Link as RouterLink } from 'react-router'
+const links = [['Home', '/'], ['About', '/about'], ['Work', '/work'], ['Employer', '/employer'], ['Employee', '/employee']]
+export default function Header() { return <AppBar position="static" color="inherit" elevation={0}><Toolbar className="site-toolbar"><Typography component={RouterLink} to="/" variant="h6" className="brand">Teamhub</Typography><nav className="main-nav" aria-label="Main navigation">{links.map(([label, path]) => <Button key={path} component={RouterLink} to={path} color="inherit">{label}</Button>)}</nav><div className="auth-nav"><Button component={RouterLink} to="/login" color="inherit">Login</Button><Button component={RouterLink} to="/register" variant="contained">Register</Button></div></Toolbar></AppBar> }

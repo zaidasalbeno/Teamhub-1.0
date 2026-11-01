@@ -1,0 +1,15 @@
+﻿:root { font-family: Inter, Arial, sans-serif; color: #1b2233; background: #f7f8fc; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+.app-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.site-toolbar { width: min(1180px, 100%); margin: auto; gap: 24px; }
+.brand { color: #3157d5; font-weight: 700; }
+.main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+.auth-nav { display: flex; align-items: center; gap: 8px; }
+.page-content { width: min(1180px, 100%); margin: 0 auto; padding: 64px 24px; flex: 1; }
+.hero-card, .content-card { padding: 48px; border: 1px solid #e7eaf1; border-radius: 18px !important; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.hero-card h1 { max-width: 720px; font-weight: 700; }
+.content-card { min-height: 220px; }
+.site-footer { border-top: 1px solid #e7eaf1; padding: 24px; text-align: center; color: #667085; }
+@media (max-width: 800px) { .site-toolbar { flex-wrap: wrap; padding-block: 12px; gap: 8px; } .main-nav { order: 3; flex-basis: 100%; overflow-x: auto; } .auth-nav { margin-left: auto; } .page-content { padding: 36px 16px; } .hero-card, .content-card { padding: 28px; } }
