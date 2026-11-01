@@ -1,16 +1,27 @@
-# React + Vite
+﻿# Teamhub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React and Vite app with simple public pages, demo role-based sign-in, and employee tasks.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+From the `Teamhub` project folder:
 
-## React Compiler
+```sh
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Open the local URL printed by Vite. You can also check the project with `npm run lint` and create a production build with `npm run build`.
 
-## Expanding the ESLint configuration
+## Where React concepts are used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Entry point and providers:** `src/main.jsx` sets up the MUI theme, `BrowserRouter`, and `AuthProvider`.
+- **Routes and shared layout:** `src/App.jsx` defines the pages and role-protected dashboard routes; `src/components/Header.jsx` and `Footer.jsx` are shared across pages.
+- **Pages:** `src/pages/` contains Home, About, Work, Login, Register, Employer, and Employee screens.
+- **Context:** `src/context/AuthContext.jsx` stores the current user and provides register, login, and logout actions.
+- **Custom hook:** `src/hooks/useAuth.js` reads the auth context.
+- **Protected routes:** `src/components/ProtectedRoute.jsx` sends signed-out users to Login and routes signed-in users to their role dashboard.
+- **State and effects:** `src/pages/Employee.jsx` uses state to update task statuses and an effect to persist them in localStorage per employee.
+- **Theme and responsive styles:** `src/theme/theme.js` defines the MUI theme; `src/index.css` contains the shared and small-screen layout styles.
+
+Authentication is for local demonstration only. The app stores demo account details and task statuses in browser localStorage; it has no backend.
