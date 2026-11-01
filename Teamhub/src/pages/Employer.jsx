@@ -1,2 +1,11 @@
-﻿import Page from './Page.jsx'
-export default function Employer() { return <Page title="For employers" description="Find great people to help your team move forward." /> }
+import { Button, Paper, Stack, Typography } from '@mui/material'
+import { useAuth } from '../hooks/useAuth.js'
+export default function Employer() {
+  const { user, logout } = useAuth()
+  return <Paper className="content-card" elevation={0}>
+    <Typography variant="overline" color="primary">Employer dashboard</Typography>
+    <Typography component="h1" variant="h4">Welcome, {user.name}</Typography>
+    <Typography color="text.secondary">You’re signed in as an employer ({user.email}).</Typography>
+    <Stack direction="row" spacing={1}><Button onClick={logout} variant="outlined">Logout</Button></Stack>
+  </Paper>
+}

@@ -19,3 +19,6 @@ a { color: inherit; text-decoration: none; }
 .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .feature-card { border-color: #e7eaf1 !important; border-radius: 12px !important; }
 @media (max-width: 800px) { .feature-grid { grid-template-columns: 1fr; } }
+
+.auth-card { width: min(100%, 520px); margin: 0 auto; }
+.auth-card a { color: #3157d5; }
